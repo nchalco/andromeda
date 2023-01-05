@@ -64,15 +64,17 @@
     (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
     v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
         o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
-        y=e.createElement(n);y.async=!0;y.src='https://pendo-helix-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+        y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo-atlas.pendo-dev.com/agent/static/'+apiKey+'/pendo.js';
         z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
 
-        // Call this whenever information about your visitors becomes available
+        // This function creates anonymous visitor IDs in Pendo unless you change the visitor id field to use your app's values
+        // This function uses the placeholder 'ACCOUNT-UNIQUE-ID' value for account ID unless you change the account id field to use your app's values
+        // Call this function after users are authenticated in your app and your visitor and account id values are available
         // Please use Strings, Numbers, or Bools for value types.
         pendo.initialize({
             visitor: {
-                id:              'testuser',          // Required if user is logged in
-                email:           'testuser@pendo.io' // Recommended if using Pendo Feedback, or NPS Email
+                id:              'natalie'   // Required if user is logged in, default creates anonymous ID
+                email:       'natalie@pendo.io' // Recommended if using Pendo Feedback, or NPS Email
                 // full_name:    // Recommended if using Pendo Feedback
                 // role:         // Optional
 
@@ -81,8 +83,8 @@
             },
 
             account: {
-                id:           'testaccount',  // Required if using Pendo Feedback
-                name:         'account name' // Optional
+                id:           'letest' // Required if using Pendo Feedback, default uses the value 'ACCOUNT-UNIQUE-ID'
+                name:         'letest' // Optional
                 // is_paying:    // Recommended if using Pendo Feedback
                 // monthly_value:// Recommended if using Pendo Feedback
                 // planLevel:    // Optional
@@ -93,8 +95,8 @@
                 // as long as it's not one of the above reserved names.
             }
         });
-})('637b72b9-6462-4fc2-5a05-a70491d95dc7');
+})('c882f44a-0466-4900-676b-97c4b5ad42c5');
 </script>
-   <!-- ********** PENDO SNIPPET ********** -->
+  <!-- ********** PENDO SNIPPET ********** -->
   
 </html>
